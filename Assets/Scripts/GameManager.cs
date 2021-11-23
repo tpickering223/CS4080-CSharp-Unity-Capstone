@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
 
     private float _updateInterval = .5f;
     private GameOfLifeController _gameOfLifeController;
+    private InformationHandler _infoDisplay;
     //temp variables
     [Header("Temp Variables")]
     [SerializeField] private int _width = 10;
@@ -30,6 +31,7 @@ public class GameManager : Singleton<GameManager>
     [ContextMenu("Start Game")]
     public void StartGame()
     {
+        _infoDisplay = GameObject.Find("GenerationDisplay").GetComponent<InformationHandler>(); // Placed here because Unity doesn't like GetComponenet in field initialization.
         StartCoroutine(UpdateLoop());
     }
 
@@ -48,9 +50,15 @@ public class GameManager : Singleton<GameManager>
     {
         while (true)
         {
+
             yield return new WaitForSeconds(this._updateInterval);
+
             this._mapController.UpdateMap(this._gameOfLifeController.GameTick(), _width, _height);
             //call game tick
+
+            //Update UI readout
+            _infoDisplay.UpdateFreq = _updateInterval;
+            _infoDisplay.Generations++;
         }
     }
     #endregion

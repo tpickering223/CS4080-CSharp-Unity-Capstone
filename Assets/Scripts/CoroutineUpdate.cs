@@ -7,13 +7,12 @@ public class CoroutineUpdate : MonoBehaviour
     [SerializeField] private List<SerializableList<SpriteRenderer>> _sprites = new List<SerializableList<SpriteRenderer>>();
     private float _updateInterval = .5f;
     private GameOfLifeController _controller;
-
     // Start is called before the first frame update
     void Start()
     {
         //_controller = new GameOfLifeController();
         //this._controller.Init(_sprites);
-
+        
         StartCoroutine(UpdateLoop());
     }
 
