@@ -23,6 +23,7 @@ public class GameOfLifeController
 
     public void Init(MapTile[,] map, int width, int height)
     {
+        this.grid = new int[width, height];
         //this._map = map;
         this._width = width;
         this._height = height;

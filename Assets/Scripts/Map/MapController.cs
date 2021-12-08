@@ -40,4 +40,15 @@ public class MapController : MonoBehaviour
             }
         }
     }
+
+    public void ClearMap(int width, int height)
+    {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                GameObject.Destroy(this._map[i, j]);
+            }
+        }
+    }
 }
