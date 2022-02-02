@@ -1,6 +1,14 @@
 # CS4080-CSharp-Unity-Capstone
 
-## To run:
+
+## About
+
+An implementation of Conway's Game of Life in the Unity Game engine.
+
+Developers: Riley Kuttruff, Thomas Pickering, Alec Gotts, Evan K.
+
+
+### To run:
 
 1. Download file 'UnzipME.zip'
 2. Unzip the file
